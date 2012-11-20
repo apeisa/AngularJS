@@ -1,0 +1,15 @@
+<?php
+class AngularUI extends WireData implements Module {
+    public static function getModuleInfo() {
+        return array(
+            'title' => 'Angular UI',
+            'summary' => 'Loads Angular UI library when called.',
+            'version' => 30,
+            'requires' => array("AngularJS")
+        );
+    }
+    public function init() {
+        $this->config->scripts->add($this->config->urls->AngularUI . "angular-ui.min.js");
+        $this->config->styles->add($this->config->urls->AngularUI . "angular-ui.css");
+    }
+}

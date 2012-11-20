@@ -1,0 +1,13 @@
+<?php
+class AngularJS extends WireData implements Module {
+    public static function getModuleInfo() {
+        return array(
+            'title' => 'Angular JS',
+            'summary' => 'Loads AngularJS library when called.',
+            'version' => 102
+        );
+    }
+    public function init() {
+        $this->config->scripts->add($this->config->urls->AngularJS . "angular.min.js");
+    }
+}
